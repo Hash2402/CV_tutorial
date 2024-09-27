@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Directions - Basketball Shot Analysis</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Your custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Basketball Shot Analysis</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="object_detection.html">Object Detection</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="object_tracking.html">Object Tracking</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="motion_analysis.html">Motion Analysis</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="challenges.html">Challenges</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="future_directions.html">Future Directions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="bibilography.html">Bibilography</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="button-container">
+        <a class="btn btn-outline-primary" onclick="speakText()" style="margin-right: 10px;">Listen</a>
+        <a class="btn btn-outline-secondary" onclick="stopSpeaking()">Stop</a>
+    </div>
+    <section id="future-directions" class="container mt-5">
+        <div id="textToSpeak">
+        <h2>Future Directions for Basketball Shot Analysis</h2>
+        <hr style="border: 4px solid #000; width: 100%; margin: auto;">
+        <br><br>
+
+        <h3>Key Areas for Future Development</h3>
+        <ul>
+            <li style="margin: 20px 0; list-style-type: none;">Integration of advanced machine learning models for enhanced accuracy in shot analysis.</li>
+            <li style="margin: 20px 0; list-style-type: none;">Incorporation of 3D motion capture for detailed shooting mechanics analysis.</li>
+            <li style="margin: 20px 0; list-style-type: none;">Personalized training recommendations based on individual shooting data.</li>
+            <li style="margin: 20px 0; list-style-type: none;">Analysis of team dynamics and passing accuracy to improve overall team performance.</li>
+        </ul>
+
+        <h3>Conclusion</h3>
+        <p>
+            The proposed mobile application for basketball shot analysis leverages computer vision to offer accurate, data-driven insights into key shot metrics, such as velocity, angle, and trajectory. By helping athletes and coaches gain a better understanding of shot mechanics, this tool could significantly improve shooting performance and training efficiency. As advancements in computer vision and sports analytics continue to evolve, this project has the potential to contribute to a new level of sophistication in basketball performance analysis, enhancing the game at both amateur and professional levels.
+       </p>
+       
+    <div style="display: flex;justify-content: center;">
+        <img src="assets\motion\motion_gif.gif",alt="BB motion" class="img-thumbnail" id="object_detetc_box">
+        </div>
+    <br>
+    <div class="navigation-buttons" style="display: flex; justify-content: flex-end;">
+        <a href="challenges.html" style="margin-right: 30px;">
+             <i class="fas fa-arrow-right fa-3x"></i>
+        </a>
+    </div>
+        </div>
+    </section>
+
+    <footer >
+        <p>&copy; 2024 Basketball Shot Analysis</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function speakText() {
+            const text = document.getElementById("textToSpeak").innerText; // Get text from a specific element
+            const speech = new SpeechSynthesisUtterance(text);
+            speech.lang = 'en-US'; // Set the language
+            window.speechSynthesis.speak(speech);
+        }
+        function stopSpeaking() {
+            window.speechSynthesis.cancel(); // Stop any ongoing speech
+        }
+        window.onbeforeunload = function () {
+        stopSpeaking();
+    };
+    </script>
+</body>
+</html>
