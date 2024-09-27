@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motion Analysis and Kinematic Calculations</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Basketball Shot Analysis</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="object_detection.html">Object Detection</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="object_tracking.html">Object Tracking</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="motion_analysis.html">Motion Analysis</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="challenges.html">Challenges</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="future_directions.html">Future Directions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="bibilography.html">Bibilography</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="button-container">
+        <a class="btn btn-outline-primary" onclick="speakText()" style="margin-right: 10px;">Listen</a>
+        <a class="btn btn-outline-secondary" onclick="stopSpeaking()">Stop</a>
+    </div>
+    <section id="motion-analysis" class="container mt-5">
+        <div id="textToSpeak">
+        <h2>Motion Analysis and Kinematic Calculations</h2>
+        <hr style="border: 4px solid #000; width: 100%; margin: auto;">
+        <br><br>
+        
+        <h3>Key kinematic parameters</h3>
+        <ul>
+            <li style="margin: 20px 0; list-style-type: none;">
+                <strong>Angle of Projection (θ):</strong> This is the angle at which an object is launched relative to the horizontal. It significantly influences the object's trajectory. A higher angle of projection generally results in a higher but shorter distance traveled, while a lower angle can produce a longer but flatter trajectory. The angle is critical in determining the optimal path for achieving a specific target, such as in sports or engineering applications.
+            </li>
+            <li style="margin: 20px 0; list-style-type: none;">
+                <strong>Initial Velocity (v):</strong> This parameter refers to the speed and direction of the object at the moment of launch. It can be broken down into horizontal and vertical components, which determine how far and how high the object will travel. A greater initial velocity leads to a longer range and higher maximum height, which are essential for accurately predicting the object's path.
+            </li>
+            <li style="margin: 20px 0; list-style-type: none;">
+                <strong>Displacement (s):</strong> Displacement is the straight-line distance from the initial position to the final position of the object. It considers only the starting and ending points, ignoring the path taken. In projectile motion, displacement helps determine how far the object has traveled horizontally and vertically, which is crucial for applications like aiming in sports.
+            </li>
+            <li style="margin: 20px 0; list-style-type: none;">
+                <strong>Time of Flight (t):</strong> This parameter indicates the total time the object remains in motion from launch to landing. Time of flight is influenced by the angle of projection and the initial velocity. It is an essential factor in predicting when and where the object will land, which is vital for precision in activities like basketball shooting or artillery firing.
+            </li>
+            <li style="margin: 20px 0; list-style-type: none;">
+                <strong>Trajectory:</strong> The trajectory is the curved path that the object follows through space during its motion. It is influenced by the angle of projection, initial velocity, and gravitational force acting on the object. The shape of the trajectory is typically parabolic in ideal projectile motion, and understanding it is crucial for predicting the object's position at any given time, as well as for optimizing performance in sports and other applications.
+            </li>
+        </ul>
+        <div style="display: flex;justify-content: center;">
+        <img src="assets\basketball_motion\projectile_formula.png",alt="Formulas" class="img-thumbnail" id="object_detetc_box">
+        </div>
+        <p style="margin-left: 20px;">
+            Where,<br>
+            <span style="color: red;">T is Time of flight</span><br>
+            <span style="color: rgb(4, 85, 4);">H is maximum height reached</span><br>
+            <span style="color: blue;">R is the Horizontal range</span>
+        </p>
+        
+        <h3>Motion analysis in basketball shot analysis </h3>
+        <p>In basketball shot analysis, key parameters like the angle of projection, speed of the ball, distance traveled, and how long the ball stays in the air can be gathered using object tracking and motion analysis. By tracking the ball’s movement with a camera, the position of the ball is recorded at different points during the shot. This data helps calculate the distance the ball travels (displacement) and how long it stays in the air (time of flight). By analyzing the ball's movement, the initial speed and the angle at which the ball is released can also be determined. With this information, a visual model of the ball’s path (trajectory) can be created, showing how it moves through the air. This helps players and coaches better understand how to make successful shots.
+
+            For example, W. Yan,X. Jiang, and P. Liu (2023) explain how artificial intelligence (AI) can help track and analyze these important parameters to improve shot analysis. Similarly,  Kadam et al. (2023) show how math techniques like polynomial regression can predict the ball’s path using these parameters. Kao et al. (2022) also demonstrate how analyzing the ball’s trajectory can help players improve their shooting techniques by studying how the ball interacts with the hoop.</p>
+        <div style="display: flex;justify-content: center;">
+            <img src="assets\basketball_motion\motion_basketball.jpg",alt="Formulas" class="img-thumbnail" id="object_detetc_box">
+        </div>
+        <br>
+        <h3>Algorithms for prediction</h3>
+        <ul>
+            <li style="margin: 20px 0; list-style-type: none;">
+                <strong>Polynomial Regression:</strong> 
+                In the context of predicting a basketball's trajectory, polynomial regression can model the curved path that the ball takes when shot. By fitting a polynomial equation to the recorded data points of the ball's position over time, it is possible to create a mathematical representation of the trajectory. This helps in understanding how changes in the angle or force of the shot can affect the ball's flight path.
+            </li>
+            <li style="margin: 20px 0; list-style-type: none;">
+                <strong>Least Squares Fitting:</strong> 
+                Least squares fitting is useful for determining the best curve that represents the trajectory of the basketball based on observational data. By minimizing the differences between the predicted trajectory and the actual data points collected from the shot, it provides a reliable model for predicting where the ball will land. This technique ensures that the trajectory estimation is as accurate as possible, considering all collected data.
+            </li>
+            <li style="margin: 20px 0; list-style-type: none;">
+                <strong>Kalman Filter:</strong> 
+                The Kalman filter can be employed to continuously estimate the position and velocity of the basketball as it is shot and travels through the air. By predicting the ball's future position based on its current state and updating these predictions with real-time data from the tracking system, the Kalman filter provides a smooth and accurate trajectory prediction. This is especially valuable in scenarios where the tracking data may contain noise or inconsistencies.
+            </li>
+            <li style="margin: 20px 0; list-style-type: none;">
+                <strong>Machine Learning Models:</strong> 
+                Machine learning models can analyze large sets of historical basketball shot data to learn patterns associated with successful shots. By incorporating various parameters such as the angle of projection, initial velocity, and other factors, these models can predict the likelihood of making a basket from different positions on the court. This predictive capability allows for personalized training and strategy development for players aiming to improve their shooting performance.
+            </li>
+        </ul>
+        <div class="navigation-buttons" style="display: flex; justify-content: flex-end;">
+            <a href="challenges.html" style="margin-right: 30px;">
+                 <i class="fas fa-arrow-right fa-3x"></i>
+            </a>
+        </div> 
+
+        <br><br>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Basketball Shot Analysis</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function speakText() {
+            const text = document.getElementById("textToSpeak").innerText; // Get text from a specific element
+            const speech = new SpeechSynthesisUtterance(text);
+            speech.lang = 'en-US'; // Set the language
+            window.speechSynthesis.speak(speech);
+        }
+        function stopSpeaking() {
+            window.speechSynthesis.cancel(); // Stop any ongoing speech
+        }
+        window.onbeforeunload = function () {
+        stopSpeaking();
+    };
+    </script>
+</body>
+</html>
